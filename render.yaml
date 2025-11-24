@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: logo-links
+    env: static
+    buildCommand: ""
+    startCommand: ""
+    staticPublishPath: .
+    routes:
+      - path: /
+        directory: .

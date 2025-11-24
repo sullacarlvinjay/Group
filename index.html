@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Links</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .logo-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 15px;
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-12px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(255,255,255,0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .logo-item:hover::before {
+            opacity: 1;
+        }
+        
+        .logo-item:active {
+            transform: translateY(-8px) scale(1.02);
+            transition: all 0.1s ease;
+        }
+        
+        .logo-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            z-index: 1;
+            position: relative;
+        }
+        
+        .logo-item:hover img {
+            transform: scale(1.15) rotate(5deg);
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4)) brightness(1.2);
+        }
+        
+        .logo-item h3 {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .logo-item:hover h3 {
+            transform: translateY(-2px);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .logo-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            transition: all 0.4s ease;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .logo-item:hover p {
+            color: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+        }
+        
+        .logo-item small {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            transition: all 0.4s ease;
+            z-index: 1;
+            position: relative;
+            line-height: 1.3;
+            text-align: center;
+            max-width: 200px;
+        }
+        
+        .logo-item:hover small {
+            color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+        
+        .logo-item .author {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            transition: all 0.4s ease;
+            z-index: 1;
+            position: relative;
+            text-align: center;
+            font-style: italic;
+            opacity: 0.8;
+        }
+        
+        .logo-item:hover .author {
+            color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+            
+            .logo-item {
+                padding: 1.5rem;
+                min-height: 120px;
+            }
+            
+            .logo-item img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quick Links</h1>
+        
+        <div class="logo-grid">
+            <!-- MushGuard -->
+            <a href="https://mushguard.onrender.com" target="_blank" class="logo-item">
+                <img src="assets/logos/mushguard.png" alt="MushGuard Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                </svg>
+                <h3>MushGuard</h3>
+                <p>AI Mushroom Identifier</p>
+                <small>Mushroom MApping</small>
+                <div class="author">Carlvin Jay G. Sulla</div>
+            </a>
+            
+            <!-- Prophane -->
+            <a href="https://prophane.onrender.com" target="_blank" class="logo-item">
+                <img src="assets/logos/prophane.png" alt="Prophane Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <h3>Prophane</h3>
+                <p>Analytics Platform</p>
+                <small>Advanced data analytics and insights platform</small>
+                <div class="author">Juniel Villablanca</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
